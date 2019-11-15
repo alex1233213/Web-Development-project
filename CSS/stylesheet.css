@@ -1,0 +1,23 @@
+html { 
+	font-family: serif;
+}
+
+
+img {
+	width: 60%;
+	position : relative;
+	right : 0px;
+}
+
+
+
+footer {
+	display : block;
+	border-style : solid;
+	border-width : 0.1rem;
+	background-color : yellow;
+}
+
+footer p {
+	text-align : center;
+}
