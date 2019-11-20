@@ -11,25 +11,61 @@
 	</head>
 	
 	<body>
+		<div style="background-image:url('Images/book.jpg');">
 		<header>
-			<h1>Welcome to our book reservation webpage</h1>
+			<h2 id="greeting">Welcome to our book reservation webpage</h2>
 		</header>
 		
-		<form action="PHP/action.php" method="post">
-			<div class="inputcontainer">
+		<form id="inputform" action="PHP/action.php" method="post">
+			<br>
+			<div id="loginsection">
+				<h3>Login</h3>
 				<label for="username">Username</label>
-				<input type="text" name="uname" id="uname">
+				<input type="text" name="username" id="username">
 				
 				<label for="password">Password</label>
-				<input type="password" name="upass" id="upass">
+				<input type="password" name="password" id="password">
 				
-				<
+				<input id="button" type="submit" value="Log In">
 			</div>
-		
+			
+			<div id="createaccsection">
+				<h3>Create an Account</h3>
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username">
+				
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password">
+				
+				<label for="firstname">First Name</label>
+				<input type="text" name="firstname" id="firstname">
+				
+				<label for="lastname">Last Name</label>
+				<input type="text" name="lastname" id="lastname">
+				
+				<label for="addressline1">Address Line 1</label>
+				<input type="text" name="addressline1" id="addressline1">
+				
+				<label for="addressline2">Address Line 2</label>
+				<input type="text" name="addressline2" id="addressline2">
+				
+				<label for="city">City</label>
+				<input type="text" name="city" id="city">
+				
+				<label for="telephone">Telephone</label>
+				<input type="text" name="telephone" id="telephone">
+				
+				<label for="mobile">Mobile</label>
+				<input type="text" name="mobile" id="mobile">
+				
+				<input id="button" type="submit" value="Create Account">
+			</div>
+		</form>
 		
 		<footer>
-			<p>Posted by: Alexandru Bulgari </p>
-			<p>Image by Pexels from Pixabay</p>
+			Contact by phone : 0888-9999
+			<br>
+			Email : info@bookreservation.com
 		</footer>
 	</body>
 </html>
