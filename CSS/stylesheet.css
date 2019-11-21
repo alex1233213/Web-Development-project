@@ -1,74 +1,80 @@
 html { 
-	font-family: Verdana;
+	font-family: Candara;
+}
+
+body {
+	margin: 0;
 }
 
 
 #greeting {
-	font-family : "Times New Roman", Times, serif;
+	font-family :Candara;
 	font-style: serif;
-	font-size: 3rem;
+  font-size: 1.7rem;
 	text-align: center;
-	border: 0.2rem;
-	border-style: solid;
-	padding: 2rem;
-	margin-top: 1rem;
+	padding: 1rem;
+	margin-top: 0;
+	background-color: #e8e8e8;
+	box-shadow: 0 5px 8px 0 black, 0 9px 26px 0 black;
 }
 
 input {
 	display: block;
-	width: 20rem;
-	height: 2rem;
-    font: 1rem sans-serif;
+	width: 10rem;
+	height: 1.6rem;
+    font: 0.6rem sans-serif;
 	border-radius: 0.2rem;
-	border-color: grey;
+	border-color: #404040;
 	box-sizing: border-box;
-	margin-bottom: 2.5rem
+	margin-bottom: 0.5rem;
 }
 
 label {
 	text-align: right;
+	font-size: 0.6rem;
 }
 
 #loginsection {
 	display: inline-block;
 	position: relative;
-	left : 5rem;
+	left : 7rem;
 	border-color: #F7F7F7;
+	padding: 4rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 #createaccsection {
 	display: inline-block;
   position: relative;
-	right: 17rem;
+	right: 7rem;
 	float: right;
+	padding: 5rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
-footer {
-	 display: block;
-	  background-color: black;
-    position: absolute;
-    height: 0.18rem;
-    margin: 0;
-	   text-align: center;
-	z-index: 100;
-	padding: 5rem;
-	color:white;
-	padding: 3rem;
-	overflow: hidden;
-	margin-left: 0;
+#footer {
+	display:block;
+	position: relative;
 	bottom: 0;
 	left: 0;
-	right: 0;
-	background-size: cover;
-	bottom: -100%;
+	right : 0;
+	background-color: #e8e8e8;
+	width: 100%;
+	margin-left: 0;
+	color:black;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	overflow : hidden;
+	margin-left: 0;
 	text-align: center;
+	box-shadow: 0 5px 8px 0 black, 0 9px 26px 0 black;
 }
 
 
 #button {
 	margin-top: 1rem;
-	padding-top: 1rem;
-	padding-bottom: 2.1rem;
+	padding-top: 0.7rem;
+	padding-bottom: 1.5rem;
 	border-radius: 0.4rem;
 	background-color: black;
 	color:white;
@@ -78,4 +84,6 @@ footer {
 	display: block;
 	margin: auto;
 	width: 90%;
+	margin-bottom: 30rem;
 }
+
