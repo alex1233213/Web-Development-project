@@ -1,0 +1,53 @@
+create database BookShopDB;
+
+create table User (
+	username varchar(30),
+	password varchar(6) NOT NULL,
+	firstname varchar(30) NOT NULL,
+	surname varchar(30) NOT NULL,
+	addressLine1 varchar(30) NOT NULL,
+	addressLine2 varchar(30) NOT NULL,
+	city varchar(30) NOT NULL,
+	telephone int(10) NOT NULL,
+	mobile int(10) NOT NULL,
+	
+	primary key(username)
+);
+
+
+
+create table Books (
+	isbn varchar(30),
+	booktitle varchar(30) NOT NULL,
+	author varchar(30) NOT NULL,
+	edition varchar(30),
+	year int(4) NOT NULL,
+	categoryID varchar(10) NOT NULL,
+	reserved varchar(3) NOT NULL,
+	
+	primary key(isbn),
+	foreign key(categoryID) references Categories(categoryID)
+);
+
+
+create table Categories(
+	categoryID varchar(10),
+	categoryDescription varchar(20) NOT NULL,
+	
+	primary key(categoryID)
+);
+
+
+create table Reservations(
+	isbn varchar(30),
+	username varchar(30),
+	reservedDate date NOT NULL,
+	
+	primary key(isbn),
+	foreign key(isbn) references books(isbn),
+	foreign key(username) references User(username)
+);
+	
+
+	
+	
