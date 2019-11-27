@@ -12,7 +12,7 @@
 	
 	<body>
 		<header>
-			<h3><a href="index.php" id="greeting">Bookshop.ie</a></h3>
+			<h3><a href="login.php" id="greeting">Bookshop.ie</a></h3>
 			
 			<ul>
 				<li><a href="login.php">Login</a></li>

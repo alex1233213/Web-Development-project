@@ -5,6 +5,7 @@
 	//declare variables
 	$usernameErr = $passErr = $firstnameErr = $lastnameErr = $add1Err = $add2Err = $cityErr = $telErr = $mobileErr = "";
 	$username = $password = $fname = $lastname = $add1 = $add2 = $city = $telephone = $mobile = "";
+	$formValid = True;
 	
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repeatpass'])
 	&& isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['addressline1'])
@@ -13,6 +14,7 @@
 		//validate username
 		if (empty($_POST['username'])) {
 			$usernameErr = "No username entered";
+			$formValid = False;
 		} else {
 			$username = test_input($_POST['username']);
 		}
@@ -95,15 +97,18 @@
 		$sql = "insert into User values ('$username', '$password', '$fname', '$lastname', '$add1', 
 		'$add2', '$city', '$telephone', '$mobile');";
 		
-		//query to database $db
-		$result = mysqli_query($db, $sql);
+		if($formValid) {
+			
+			//query to database $db
+			$result = mysqli_query($db, $sql);
+		}
 		
-		//check if sql statement has been run
+		/*/check if sql statement has been run
 		if($result === false) {
 			printf ("error: %s:", mysqli_error($db));
 		} else {
 			echo "success";
-		}
+		} */
 	}
 	
 	/*This function removes unwanted characters from the user input.

@@ -103,11 +103,13 @@ label {
 
 #footer {
 	display:block;
-	position: absolute;
-  bottom: 0;
+	position: relative;
+	top: 2rem;
+	bottom: 0;
 	background-color: #e8e8e8;
 	width: 100%;
 	margin-left: 0;
+	margin-top: 0;
 	color:black;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -140,3 +142,12 @@ label {
 	margin-top: 30rem;
 }
 
+
+.error {
+  display:block;
+  position: relative;
+	left: 11rem;
+	color: red;
+	bottom: 2rem;
+	font-size: 0.7rem;
+}
