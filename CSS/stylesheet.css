@@ -1,4 +1,4 @@
-html { 
+html {
 	font-family: Candara;
 }
 
@@ -36,7 +36,7 @@ li:hover {
 	background-color: white;
 }
 
-header { 
+header {
   display: block;
 	position: absolute;
 	top: 0;
@@ -118,6 +118,7 @@ label {
 	text-align: center;
 	box-shadow: 0 -5px 8px 0 black, 0 9px 26px 0 black;
 	margin-bottom: -20rem;
+	overflow: hidden;
 }
 
 
