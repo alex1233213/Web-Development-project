@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	
+	
+	if(!isset($_SESSION['username']) ) {
+		header('Location: login.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,11 +21,26 @@
 
 	<body>
 		<header>
-			<h3><a href="login.php" id="greeting">Bookshop.ie</a></h3>
+			<h3><a href="index.php" id="greeting">Bookshop.ie</a></h3>
 			<ul>
-				<li><a href="#">Log Out</a></li>
+				<li><a href="logout.php">Log Out</a></li>
+				<li><?php echo session_id(); ?> </li>
 			</ul>
 		</header>
+		
+		<div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		</div>
 
 
 		<footer id="footer">
