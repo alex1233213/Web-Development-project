@@ -4,9 +4,16 @@
 
 	//declare variables
 	$userErr = $passErr = $formErr = "";
+	
+	
+	//start session 
+	session_start();
+	
+	unset($_SESSION['username']);
+	
 
 	//check if button is set
-	if(isset($_POST['login'])) {
+	if(isset($_POST['username']) && isset($_POST['password']) ) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -35,10 +42,17 @@
 				$row = mysqli_num_rows($result);
 
 				if($row == 1) {
+					//set session variables
+					$_SESSION['username'] = $username;
+					$_SESSION['success'] = "Logged in";
+					
 					//redirect to index page
 					header("Location: index.php");
+					return;
 				} else {
-					$formErr = "* Invalid username or password";
+					$_SESSION['error'] = "* Invalid username or password";
+					header('Location: login.php');
+					return;
 				}
 
 			}
@@ -83,7 +97,12 @@
 			<br>
 			<div style="background-image: url('Images/Book.jpg');" id="loginsection">
 				<h3 class="formheading">Login</h3>
-				<span class="error"><?php echo $formErr;?></span>
+				<span class="error"><?php
+					if(isset($_SESSION['error'])) {
+						echo "Error: ". $_SESSION['error'];
+						unset($_SESSION['error']);
+					}
+				?></span>
 				<label for="username">Username</label>
 				<input type="text" name="username" id="username">
 				<span class="error"><?php echo $userErr; ?></span>
