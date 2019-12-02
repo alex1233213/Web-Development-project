@@ -3,7 +3,7 @@
 	require_once "db.php";
 
 	//declare variables
-	$usernameErr = $passErr = $firstnameErr = $lastnameErr = $add1Err = $add2Err = $cityErr = $telErr = $mobileErr = "";
+	$usernameErr = $passErr = $firstnameErr = $lastnameErr = $add1Err = $add2Err = $cityErr = $telErr = $mobileErr = $formErr = "";
 	$username = $password = $fname = $lastname = $add1 = $add2 = $city = $telephone = $mobile = "";
 	$formValid = True;
 
@@ -104,21 +104,37 @@
 			$mobile = test_input($_POST['mobile']);
 		}
 
-
+		
+		//check if the user is not already registered
+		$sql_check = "select username from user where username='$username'";
+		$query_result = mysqli_query($db, $sql_check);
+		
+		if( mysqli_num_rows($query_result) == 1) {
+			$formValid = False;
+			$usernameErr = "User is already registered";
+		}
+		
 
 		//sql statement
 		$sql = "insert into User values ('$username', '$password', '$fname', '$lastname', '$add1',
 		'$add2', '$city', '$telephone', '$mobile');";
-
+		
+		//check if form is valid
 		if($formValid == True){
 			//query to database $db
 			$result = mysqli_query($db, $sql);
+			
+			//start a session 
+			session_start();
+			$_SESSION['username'] = $username;
+			
+			
+			//redirect
+			header('Location: index.php');
 
 			//check if sql statement has been run
 			if($result === False) {
 				printf ("error: %s:", mysqli_error($db));
-			} else {
-				header('Location: index.php');
 			}
 
 		}
@@ -176,8 +192,11 @@
 
 		<form id="inputform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<br>
+			<span class="error"><?php echo $formErr ;?></span>
 			<div style="background-image: url('Images/Book.jpg');" id="createaccsection">
 				<h3 class="formheading">Create an Account</h3>
+				
+				
 				<label for="username">Username</label>
 				<input type="text" name="username" id="username">
 				<span class="error"><?php echo $usernameErr;?></span>
