@@ -6,41 +6,13 @@ body {
 	margin: 0;
 }
 
-ul {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: inline-block;
-	margin-top: 0;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	background-color: #e8e8e8;
-	overflow: hidden;
-}
-
-li {
-	display: inline;
-	float :left;
-}
-
-li a{
-	display : block;
-	color: black;
-	text-align: center;
-	padding: 1.44rem;
-	text-decoration: none;
-}
-
-li:hover {
-	background-color: white;
-}
 
 header {
   display: block;
-	position: absolute;
+  position: absolute;
 	top: 0;
-	padding-bottom: 3rem;
+	padding-bottom: 0;
+	padding-top: 0;
 	width: 100%;
 	background-color: #e8e8e8;
 	box-shadow: 0 5px 8px 0 black, 0 9px 26px 0 black;
@@ -86,8 +58,7 @@ label {
 	border-color: #F7F7F7;
 	padding: 4rem;
 	margin-top: 5rem;
-	margin-bottom: 0rem;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 5px 8px 0 black,  0 9px 26px 0 black;
 }
 
 #createaccsection {
@@ -102,23 +73,18 @@ label {
 }
 
 #footer {
-	display:block;
-	position: relative;
-	top: 2rem;
+	position: fixed;
 	bottom: 0;
+	left: 0;
 	background-color: #e8e8e8;
 	width: 100%;
-	margin-left: 0;
-	margin-top: 0;
 	color:black;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 	overflow : hidden;
-	margin-left: 0;
 	text-align: center;
 	box-shadow: 0 -5px 8px 0 black, 0 9px 26px 0 black;
-	margin-bottom: -20rem;
 	overflow: hidden;
+	padding: 0.6rem;
+	margin-top: 2rem;
 }
 
 
@@ -139,8 +105,8 @@ label {
 	display: block;
 	margin: auto;
 	width: 90%;
-	box-shadow: 0 5px 8px 0 black,
-	margin-top: 30rem;
+	margin-top: 2rem;
+	margin-bottom: 9rem;
 }
 
 
@@ -155,48 +121,65 @@ label {
 
 
 
-
- /* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+li {
+  float: right;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+	margin: 0;
+	overflow: hidden;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+li.dropdown {
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: #f9f9f9;
+  min-width: 9rem;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 1rem;
   text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} 
+.main-content {
+	margin: auto;
+	width: 90%;
+	position: relative;
+	top: 9rem;
+}
+
+
+

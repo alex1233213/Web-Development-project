@@ -4,13 +4,13 @@
 
 	//declare variables
 	$userErr = $passErr = $formErr = "";
-	
-	
-	//start session 
+
+
+	//start session
 	session_start();
-	
+
 	unset($_SESSION['username']);
-	
+
 
 	//check if button is set
 	if(isset($_POST['username']) && isset($_POST['password']) ) {
@@ -45,7 +45,7 @@
 					//set session variables
 					$_SESSION['username'] = $username;
 					$_SESSION['success'] = "Logged in";
-					
+
 					//redirect to index page
 					header("Location: index.php");
 					return;
