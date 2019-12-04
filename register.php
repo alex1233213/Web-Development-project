@@ -104,31 +104,31 @@
 			$mobile = test_input($_POST['mobile']);
 		}
 
-		
+
 		//check if the user is not already registered
 		$sql_check = "select username from user where username='$username'";
 		$query_result = mysqli_query($db, $sql_check);
-		
+
 		if( mysqli_num_rows($query_result) == 1) {
 			$formValid = False;
 			$usernameErr = "User is already registered";
 		}
-		
+
 
 		//sql statement
 		$sql = "insert into User values ('$username', '$password', '$fname', '$lastname', '$add1',
 		'$add2', '$city', '$telephone', '$mobile');";
-		
+
 		//check if form is valid
 		if($formValid == True){
 			//query to database $db
 			$result = mysqli_query($db, $sql);
-			
-			//start a session 
+
+			//start a session
 			session_start();
 			$_SESSION['username'] = $username;
-			
-			
+
+
 			//redirect
 			header('Location: index.php');
 
@@ -148,6 +148,7 @@
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
+		$data = mysqli_real_escape_string($data);
 		return $data;
 	}
 
@@ -195,8 +196,8 @@
 			<span class="error"><?php echo $formErr ;?></span>
 			<div style="background-image: url('Images/Book.jpg');" id="createaccsection">
 				<h3 class="formheading">Create an Account</h3>
-				
-				
+
+
 				<label for="username">Username</label>
 				<input type="text" name="username" id="username">
 				<span class="error"><?php echo $usernameErr;?></span>

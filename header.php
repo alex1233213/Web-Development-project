@@ -8,12 +8,12 @@
 		<meta name="author" content="Alex Bulgari">
 		<meta name="viewport" content="width=device-width, intial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
-		<script src="Javascript/script.js"></script>
+
 	</head>
 
 	<body>
 		<header>
-			<h3><a href="index.php" id="greeting">Bookshop.ie</a></h3>
+				<h3><a href="index.php" id="greeting">Bookshop.ie</a></h3>
 
 
 			<ul>
@@ -31,5 +31,13 @@
 						<a href="cookery.php">Cookery</a>
 						<a href="fiction.php">Fiction</a></li>
 					</div>
+
+				<li><a href="viewRes.php">View Reservations</a></li>
 			</ul>
+
+			<form action="srchAuthorBook.php" method="post">
+				<input id="searchbar" type="text" name="searchinput" placeholder="Search for book">
+				<button id="searchbutton" type="submit" onclick="goToPage()">Search</button>
+
+			</form>
 		</header>

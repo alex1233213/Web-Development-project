@@ -11,28 +11,27 @@ header {
   display: block;
   position: absolute;
 	top: 0;
-	padding-bottom: 0;
+	padding-bottom: 1.5rem;
 	padding-top: 0;
 	width: 100%;
 	background-color: #e8e8e8;
-	box-shadow: 0 5px 8px 0 black, 0 9px 26px 0 black;
+	box-shadow: 0 0.1rem 0.5rem 0 grey, 0 0.1rem 0.1rem 0 grey;
 }
 
 #greeting {
 	font-family :Candara;
 	font-style: serif;
   font-size: 1.7rem;
-	padding: 1rem;
-	margin-top: 0;
 	background-color: #e8e8e8;
-
-	margin-bottom: 1rem;
 	display: block;
 	width: 15%;
 	position: absolute;
-	top:0;
+	top:30%;
+	left: 2%;
 	text-decoration: none;
 	color: black;
+	border-right: 1px solid grey;
+	padding: 0.2rem;
 }
 
 input {
@@ -58,7 +57,7 @@ label {
 	border-color: #F7F7F7;
 	padding: 4rem;
 	margin-top: 5rem;
-	box-shadow: 0 5px 8px 0 black,  0 9px 26px 0 black;
+	box-shadow: 0 5px 8px 0 grey,  0 9px 26px 0 grey;
 }
 
 #createaccsection {
@@ -69,7 +68,7 @@ label {
 	padding-bottom: 1rem;
 	margin-bottom: 5rem;
 	margin-top: 5rem;
-	box-shadow: 0 5px 8px 0 black, 0 9px 26px 5px black;
+	box-shadow: 0 5px 8px 0 grey, 0 9px 26px 5px grey;
 }
 
 #footer {
@@ -81,8 +80,7 @@ label {
 	color:black;
 	overflow : hidden;
 	text-align: center;
-	box-shadow: 0 -5px 8px 0 black, 0 9px 26px 0 black;
-	overflow: hidden;
+	box-shadow: 0 0 1rem 0 grey, 0 1rem 0.2rem 1rem grey;
 	padding: 0.6rem;
 	margin-top: 2rem;
 }
@@ -123,6 +121,7 @@ label {
 
 ul {
   list-style-type: none;
+
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -130,16 +129,20 @@ ul {
 
 li {
   float: right;
+
 }
 
 li a, .dropbtn {
   display: inline-block;
   color: black;
   text-align: center;
-  padding: 1rem;
+  padding: 0.3rem;
   text-decoration: none;
 	margin: 0;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
 	overflow: hidden;
+	box-shadow: 0 0.13rem 0.2rem 0 rgba(0,0,0,0.2);
 }
 
 li a:hover, .dropdown:hover .dropbtn {
@@ -154,17 +157,19 @@ li.dropdown {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 9rem;
+  min-width: 7.5rem;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 1rem;
+  padding: 0.6rem;
+	margin-bottom: 0.2rem;
   text-decoration: none;
   display: block;
   text-align: left;
+	margin-right: 0;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
@@ -174,12 +179,72 @@ li.dropdown {
 }
 
 
-.main-content {
-	margin: auto;
-	width: 90%;
-	position: relative;
-	top: 9rem;
+
+
+
+
+#searchbar, #searchbutton {
+	display: inline-block;
+	border: none;
+	padding: 0.9rem;
+	border-radius: 0;
+	font-size: 1rem;
+	margin-bottom: 0;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 
+#searchbutton {
+	padding: 0.314rem;
+	margin: 0;
+  margin
+	z-index: -1;
+}
+
+
+#searchbar {
+	margin-top: 0;
+  width: 30%;
+	margin-left: 20rem;
+}
+
+
+#searchbutton:hover {
+	cursor: pointer;
+}
+
+
+.column {
+  display: block;
+	width: 100%;
+	background-color: white;
+	vertical-align:top;
+	margin-top: -0.95rem;
+  box-shadow: 0 0.1rem 0.5rem 0 grey, 0 0.1rem 0.1rem 0 grey;
+	margin-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.column p, h2 {
+	display: block;
+	position: relative;
+	left: 10rem;
+	font-size: 1rem;
+  margin: 0;
+	
+}
+
+
+.main-content {
+	margin: auto;
+	width: 90%;
+  overflow: visible;
+	position: relative;
+	top: 10rem;
+	background-color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	max-height: 90%;
+	margin-bottom: 20rem;
+}
 
