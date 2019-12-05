@@ -38,6 +38,14 @@
 			<form action="srchAuthorBook.php" method="post">
 				<input id="searchbar" type="text" name="searchinput" placeholder="Search for book">
 				<button id="searchbutton" type="submit" onclick="goToPage()">Search</button>
-
 			</form>
 		</header>
+
+
+		<div class="main-content">
+			<?php
+			require_once "userSession.php";
+
+			if ($_SESSION['reservations'] == False) {
+				echo "<form action=\"viewRes.php\" method=\"post\">";
+			} ?>

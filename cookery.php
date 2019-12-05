@@ -3,7 +3,6 @@
    require_once "userSession.php";
 ?>
 
-<div class="main-content">
    <?php
       require_once "findBook.php";
       require_once "db.php";
@@ -15,7 +14,6 @@
       mysqli_close($db);
    ?>
 
-</div>
 
 
 

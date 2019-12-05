@@ -1,10 +1,20 @@
 
+
+         <?php
+         require_once "userSession.php";
+
+         if ($_SESSION['reservations'] == False) {
+            echo "</form>";
+         } ?>
+
+      </div>
+
       <footer id="footer">
          Contact by phone : 0888-9999
          <br>
          Email : info@bookreservation.com
       </footer>
 
-   <script src="Javascript/script.js"></script>
+      <script src="Javascript/script.js"></script>
    </body>
 </html>

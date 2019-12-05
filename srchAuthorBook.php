@@ -1,4 +1,6 @@
 <?php
+   //create session
+   //connect to database
    require_once "userSession.php";
    require_once "db.php";
 ?>
@@ -8,7 +10,7 @@
 ?>
 
 
-   <div class="main-content">
+
       <?php
          require_once "displayBooks.php";
          $_SESSION['condition'] = "";
@@ -24,6 +26,7 @@
             } else {
                $input = test_input($input, $db);
 
+               //break the string user input into separate keywords
                $input = explode(" ", $input);
 
                foreach($input as $value) {
@@ -34,7 +37,7 @@
 
                $_SESSION['condition'] = substr($_SESSION['condition'] ,0 , -4);
 
-               $sql = "select booktitle, author, edition, year from books where". $_SESSION['condition']. ";";
+               $sql = "select isbn, booktitle, author, edition, year from books where". $_SESSION['condition']. ";";
 
                $result = mysqli_query($db, $sql);
 
@@ -66,7 +69,7 @@
          unset($_SESSION['condition']);
          mysqli_close($db);
       ?>
-   </div>
+
 
 
 <?php

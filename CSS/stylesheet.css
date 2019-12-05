@@ -86,14 +86,14 @@ label {
 }
 
 
-#button {
+/* #button {
 	margin-top: 1rem;
 	padding-top: 0.7rem;
 	padding-bottom: 1.5rem;
 	border-radius: 0.4rem;
 	background-color: black;
 	color:white;
-}
+} */
 
 #button:hover {
 	background-color: #262525;
@@ -219,11 +219,9 @@ li.dropdown {
 	width: 100%;
 	background-color: white;
 	vertical-align:top;
-	margin-top: -0.95rem;
+	margin-top: 0.01rem;
   box-shadow: 0 0.1rem 0.5rem 0 grey, 0 0.1rem 0.1rem 0 grey;
-	margin-bottom: 0.5rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	margin-bottom: 0.01rem;
 }
 
 .column p, h2 {
@@ -232,7 +230,7 @@ li.dropdown {
 	left: 10rem;
 	font-size: 1rem;
   margin: 0;
-	
+
 }
 
 
@@ -248,3 +246,22 @@ li.dropdown {
 	margin-bottom: 20rem;
 }
 
+
+
+.reservebutton {
+  display: block;
+	position: relative;
+	left: 40rem;
+	bottom: 2rem;
+  padding: 1rem;
+	padding-bottom: 1.9rem;
+	background-color: #fafafa;
+	box-shadow: 0 0.13rem 0.2rem 0 rgba(0,0,0,0.2);
+	font-size: 0.9rem;
+  border-radius: 2px;
+}
+
+.reservebutton:hover {
+	cursor: pointer;
+	background-color: white;
+}
