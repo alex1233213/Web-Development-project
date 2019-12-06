@@ -22,14 +22,14 @@
 				<li class="dropdown">
 					<a href="javascript:void(0)" class="dropbtn">Book Categories</a>
 					<div class="dropdown-content">
-						<a href="health.php">Health</a>
-						<a href="business.php">Business</a>
-						<a href="biography.php">Biography</a>
-						<a href="tech.php">Technology</a>
-						<a href="travel.php">Travel</a>
-						<a href="selfhelp.php">Self-help</a>
-						<a href="cookery.php">Cookery</a>
-						<a href="fiction.php">Fiction</a></li>
+						<a href="bookCategories.php?id=1">Health</a>
+						<a href="bookCategories.php?id=2">Business</a>
+						<a href="bookCategories.php?id=3">Biography</a>
+						<a href="bookCategories.php?id=4">Technology</a>
+						<a href="bookCategories.php?id=5">Travel</a>
+						<a href="bookCategories.php?id=6">Self-help</a>
+						<a href="bookCategories.php?id=7">Cookery</a>
+						<a href="bookCategories.php?id=8">Fiction</a></li>
 					</div>
 
 				<li><a href="viewRes.php">View Reservations</a></li>
