@@ -10,6 +10,13 @@
 
       $category = $_GET['id'];
 
+
+
+		//check for  set page
+
+
+
+
       findBook($db, $category);
 
       mysqli_close($db);

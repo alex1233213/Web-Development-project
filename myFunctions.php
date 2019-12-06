@@ -5,14 +5,21 @@
 	//this function finds the books from the database based on a category
 	function findBook($db, $cat){
 
-      $sql = "select isbn, booktitle, author, edition, year, reserved from books where categoryID=$cat;";
+
+		//query for total records
+      $sql = "select isbn, booktitle, author, edition, year, reserved from books where categoryID='$cat';";
 
       $result_category = mysqli_query($db, $sql);
 
 
+
+
+
+
+
 	//print details
       if(mysqli_num_rows($result_category) > 0) {
-            while($row = mysqli_fetch_assoc($result_category)) {
+            while($row = mysqli_fetch_array($result_category)) {
                displayBooks($row, $row['isbn']);
             }
          } else {
@@ -24,7 +31,7 @@
 			";
       }
 		unset($_SESSION['reserveError']);
-      mysqli_free_result($result_category);
+      // mysqli_free_result($result_category);
    }
 
 
@@ -85,4 +92,10 @@
 			return False;
 		}
 	}
+
+
+
+
+
+
 ?>
