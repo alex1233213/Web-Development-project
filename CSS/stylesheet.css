@@ -124,7 +124,7 @@ label ,input, .formheading{
 #inputform {
 	display: block;
 	margin: auto;
-	width: 100%;
+	width: 90%;
 	margin-top: 2rem;
 	margin-bottom: 9rem;
 	
@@ -260,9 +260,9 @@ li.dropdown {
 	margin: auto;
 	width: 90%;
 	position: relative;
-	top: 10rem;
+	top: 2rem;
 	background-color: white;
-
+  margin-top: 10rem;
 	max-height: 90%;
 	margin-bottom: 20rem;
 }
@@ -327,7 +327,3 @@ li.dropdown {
   font-size: 1.5rem;
 }
 
-img {
-	width: 100%;
-	border: 1px solid black;
-}

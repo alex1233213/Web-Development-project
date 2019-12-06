@@ -1,6 +1,7 @@
 <?php
 	//create database connection
 	require_once "db.php";
+	require_once "myFunctions.php";
 
 	//declare variables
 	$usernameErr = $passErr = $firstnameErr = $lastnameErr = $add1Err = $add2Err = $cityErr = $telErr = $mobileErr = $formErr = "";
@@ -143,25 +144,25 @@
 
 	}
 
-	/*This function removes unwanted characters from the user input.
-	Also protects against Cross side scripting using htmlspecialchars */
-	function test_input($data, $db) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		$data = mysqli_real_escape_string($db, $data);
-		return $data;
-	}
-
-	/*this function checks if password input and confirm password match. If the two values match, returns True,
-	otherwise False */
-	function check_password($pass1, $pass2) {
-		if($pass1 == $pass2) {
-			return True;
-		} else {
-			return False;
-		}
-	}
+	// /*This function removes unwanted characters from the user input.
+	// Also protects against Cross side scripting using htmlspecialchars */
+	// function test_input($data, $db) {
+	// 	$data = trim($data);
+	// 	$data = stripslashes($data);
+	// 	$data = htmlspecialchars($data);
+	// 	$data = mysqli_real_escape_string($db, $data);
+	// 	return $data;
+	// }
+	//
+	// /*this function checks if password input and confirm password match. If the two values match, returns True,
+	// otherwise False */
+	// function check_password($pass1, $pass2) {
+	// 	if($pass1 == $pass2) {
+	// 		return True;
+	// 	} else {
+	// 		return False;
+	// 	}
+	// }
 
 
 	//Terminate connection to database
