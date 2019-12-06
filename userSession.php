@@ -3,7 +3,8 @@
 
 	require_once "db.php";
 
-	$_SESSION['reservations'] = False;
+	$_SESSION['reservationPage'] = False;
+	
 
 	if(!isset($_SESSION['username']) ) {
 		header('Location: login.php');

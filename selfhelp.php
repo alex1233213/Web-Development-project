@@ -4,7 +4,7 @@
 ?>
 
    <?php
-      require_once "findBook.php";
+      require_once "myFunctions.php";
       require_once "db.php";
 
       $sf = 6;

@@ -16,7 +16,7 @@
 			$usernameErr = "* No username entered";
 			$formValid = False;
 		} else {
-			$username = test_input($_POST['username']);
+			$username = test_input($_POST['username'], $db);
 		}
 
 		//validate password
@@ -30,7 +30,7 @@
 			$passErr = "* Password should be at least 6 characters long";
 			$formValid = False;
 		} else {
-			$password = test_input($_POST['password']);
+			$password = test_input($_POST['password'], $db);
 		}
 
 
@@ -39,7 +39,7 @@
 			$firstnameErr = "* No name entered";
 			$formValid = False;
 		} else {
-			$fname = test_input($_POST['firstname']);
+			$fname = test_input($_POST['firstname'], $db);
 		}
 
 
@@ -48,7 +48,7 @@
 			$lastnameErr = "* No surname name entered";
 			$formValid = False;
 		} else {
-			$lastname = test_input($_POST['lastname']);
+			$lastname = test_input($_POST['lastname'], $db);
 		}
 
 
@@ -57,7 +57,7 @@
 			$add1Err = "* Field required";
 			$formValid = False;
 		} else {
-			$add1 = test_input($_POST['addressline1']);
+			$add1 = test_input($_POST['addressline1'], $db);
 		}
 
 
@@ -66,7 +66,7 @@
 			$add2Err = "* Field required";
 			$formValid = False;
 		} else {
-			$add2 = test_input($_POST['addressline2']);
+			$add2 = test_input($_POST['addressline2'], $db);
 		}
 
 		//validate city
@@ -74,7 +74,7 @@
 			$cityErr = "* Field required";
 			$formValid = False;
 		} else {
-			$city = test_input($_POST['city']);
+			$city = test_input($_POST['city'], $db);
 		}
 
 
@@ -86,7 +86,7 @@
 			$telErr = "* Enter a valid telephone number";
 			$formValid = False;
 		} else {
-			$telephone = test_input($_POST['telephone']);
+			$telephone = test_input($_POST['telephone'], $db);
 		}
 
 
@@ -101,7 +101,7 @@
 			$mobileErr = "* Mobile number must be 10 digits";
 			$formValid = False;
 		} else {
-			$mobile = test_input($_POST['mobile']);
+			$mobile = test_input($_POST['mobile'], $db);
 		}
 
 
@@ -131,6 +131,7 @@
 
 			//redirect
 			header('Location: index.php');
+			$_SESSION['index'] = True;
 
 			//check if sql statement has been run
 			if($result === False) {
@@ -144,11 +145,11 @@
 
 	/*This function removes unwanted characters from the user input.
 	Also protects against Cross side scripting using htmlspecialchars */
-	function test_input($data) {
+	function test_input($data, $db) {
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
-		$data = mysqli_real_escape_string($data);
+		$data = mysqli_real_escape_string($db, $data);
 		return $data;
 	}
 
@@ -194,7 +195,7 @@
 		<form id="inputform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<br>
 			<span class="error"><?php echo $formErr ;?></span>
-			<div style="background-image: url('Images/Book.jpg');" id="createaccsection">
+			<div id="createaccsection">
 				<h3 class="formheading">Create an Account</h3>
 
 

@@ -84,18 +84,19 @@
 	</head>
 
 	<body>
-		<header>
-			<h3><a href="login.php" id="greeting">Bookshop.ie</a></h3>
 
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="register.php">Register</a></li>
-			</ul>
-		</header>
+			<header>
+				<h3><a href="login.php" id="greeting">Bookshop.ie</a></h3>
+
+				<ul>
+					<li><a href="login.php">Login</a></li>
+					<li><a href="register.php">Register</a></li>
+				</ul>
+			</header>
 
 		<form id="inputform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<br>
-			<div style="background-image: url('Images/Book.jpg');" id="loginsection">
+				<div id="loginsection">
 				<h3 class="formheading">Login</h3>
 				<span class="error"><?php
 					if(isset($_SESSION['error'])) {
@@ -112,8 +113,10 @@
 				<span class="error"><?php echo $passErr; ?></span>
 
 				<input id="button" name="login" type="submit" value="Log In">
-			</div>
+				</div>
 		</form>
+
+
 
 		<footer id="footer">
 			Contact by phone : 0888-9999

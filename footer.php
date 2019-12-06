@@ -1,12 +1,4 @@
 
-
-         <?php
-         require_once "userSession.php";
-
-         if ($_SESSION['reservations'] == False) {
-            echo "</form>";
-         } ?>
-
       </div>
 
       <footer id="footer">

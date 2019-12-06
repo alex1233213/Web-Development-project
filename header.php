@@ -43,9 +43,3 @@
 
 
 		<div class="main-content">
-			<?php
-			require_once "userSession.php";
-
-			if ($_SESSION['reservations'] == False) {
-				echo "<form action=\"viewRes.php\" method=\"post\">";
-			} ?>

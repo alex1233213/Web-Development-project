@@ -1,5 +1,6 @@
 <?php
 	require_once "userSession.php";
+
 ?>
 
 
@@ -8,13 +9,14 @@
 ?>
 
 
-	<div class="main-content">
-
-
-	</div>
-
+		<?php
+				if(isset($_SESSION['reserveError'])) {
+				echo "<h2 class=\"message\">".$_SESSION['reserveError']."</h2>";
+			}
+		?>
 
 
 <?php
+	unset($_SESSION['reserveError']);
    require_once "footer.php";
 ?>
