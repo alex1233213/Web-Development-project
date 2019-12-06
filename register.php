@@ -1,7 +1,6 @@
 <?php
 	//create database connection
 	require_once "db.php";
-	require_once "myFunctions.php";
 
 	//declare variables
 	$usernameErr = $passErr = $firstnameErr = $lastnameErr = $add1Err = $add2Err = $cityErr = $telErr = $mobileErr = $formErr = "";
@@ -27,7 +26,7 @@
 		} else if(check_password($_POST['password'] ,$_POST['repeatpass']) == False){
 			$passErr = "* Passwords do not match";
 			$formValid = False;
-		} else if(strlen($_POST['password']) < 6 ) {
+		} else if(!strlen($_POST['password']) > 6 ) {
 			$passErr = "* Password should be at least 6 characters long";
 			$formValid = False;
 		} else {
@@ -123,8 +122,8 @@
 		//check if form is valid
 		if($formValid == True){
 			//query to database $db
-			$result = mysqli_query($db, $sql);
-
+			header('Location: index.php');
+			$_SESSION['index'] = True;
 			//start a session
 			session_start();
 			$_SESSION['username'] = $username;
@@ -144,25 +143,25 @@
 
 	}
 
-	// /*This function removes unwanted characters from the user input.
-	// Also protects against Cross side scripting using htmlspecialchars */
-	// function test_input($data, $db) {
-	// 	$data = trim($data);
-	// 	$data = stripslashes($data);
-	// 	$data = htmlspecialchars($data);
-	// 	$data = mysqli_real_escape_string($db, $data);
-	// 	return $data;
-	// }
-	//
-	// /*this function checks if password input and confirm password match. If the two values match, returns True,
-	// otherwise False */
-	// function check_password($pass1, $pass2) {
-	// 	if($pass1 == $pass2) {
-	// 		return True;
-	// 	} else {
-	// 		return False;
-	// 	}
-	// }
+	/*This function removes unwanted characters from the user input.
+	Also protects against Cross side scripting using htmlspecialchars */
+	function test_input($data, $db) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		$data = mysqli_real_escape_string($db, $data);
+		return $data;
+	}
+
+	/*this function checks if password input and confirm password match. If the two values match, returns True,
+	otherwise False */
+	function check_password($pass1, $pass2) {
+		if($pass1 == $pass2) {
+			return True;
+		} else {
+			return False;
+		}
+	}
 
 
 	//Terminate connection to database

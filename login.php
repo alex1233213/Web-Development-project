@@ -5,11 +5,9 @@
 	//declare variables
 	$userErr = $passErr = $formErr = "";
 
-
-	//start session
 	session_start();
-
 	unset($_SESSION['username']);
+
 
 
 	//check if button is set
@@ -43,6 +41,8 @@
 
 				if($row == 1) {
 					//set session variables
+					session_start();
+
 					$_SESSION['username'] = $username;
 					$_SESSION['success'] = "Logged in";
 

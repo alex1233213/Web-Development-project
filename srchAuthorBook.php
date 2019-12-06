@@ -12,7 +12,7 @@
 
 
       <?php
-         require_once "displayBooks.php";
+         require_once "myFunctions.php";
          $_SESSION['condition'] = "";
 
 
@@ -43,7 +43,7 @@
 
                if(mysqli_num_rows($result) > 0) {
                      while($row = mysqli_fetch_assoc($result)) {
-                        displayBooks($row);
+                        displayBooks($row, $row['isbn']);
                      }
                   } else  {
                      echo "<p>No entries found</p>";

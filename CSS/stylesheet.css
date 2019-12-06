@@ -265,6 +265,7 @@ li.dropdown {
   margin-top: 10rem;
 	max-height: 90%;
 	margin-bottom: 20rem;
+	overflow: visible;
 }
 
 
